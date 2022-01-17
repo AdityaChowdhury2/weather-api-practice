@@ -9,12 +9,12 @@ function getWeather() {
     // console.log(`http://api.weatherstack.com/current?access_key=${YOUR_ACCESS_KEY}&query=${location1.value}`)
     // console.log(`http://api.openweathermap.org/data/2.5/weather?q=${city_name.value}&appid=${API_KEY}`)
     // console.log(document.getElementById('weather-icon').src);
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city_name.value}&appid=${API_KEY}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city_name.value}&appid=${API_KEY}`)
     // fetch(`http://api.weatherstack.com/current?access_key=${YOUR_ACCESS_KEY}&query=${city_name.value}`)
         .then(response => response.json())
         .then(data => {
             // console.log(data)
-            const icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+            const icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
             const tempInKelvin = data.main.temp;
             const convertedTemp = Math.round(tempInKelvin - 273.15);
             // console.log(icon);
